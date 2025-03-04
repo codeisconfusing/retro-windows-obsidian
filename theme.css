@@ -1,21 +1,7 @@
 /* Base variables and common elements */
 body {
-	--font-text-theme: "MS Sans Serif", Arial, sans-serif;
+	/*--font-text-theme: "MS Sans Serif", Arial, sans-serif;*/
 	--window-border: 2px solid #000;
-    
-    /* Colored Folders - shared across themes */
-    --folder-color-1: #965D5D; /* red */
-    --folder-color-2: #8470A6; /* purple */
-    --folder-color-3: #507A9E; /* blue */
-    --folder-color-4: #5A8D76; /* green */
-    --folder-color-5: #A19C6C; /* yellow */
-    --folder-color-6: #A67A5B; /* orange */
-    --folder-color-7: #96707E; /* pink */
-    --folder-color-8: #5B8B9E; /* sky blue */
-    --folder-color-9: #6B8C6B; /* mint */
-    --folder-color-10: #8B7E6D; /* taupe */
-    --folder-color-11: #8D6B83; /* mauve */
-    --folder-color-12: #6C8299; /* steel blue */
     
     /* Header colors - shared across themes */
     --h1-color: #8470A6; /* purple */
@@ -95,7 +81,7 @@ body {
     /* Dark theme specific overrides */
     --bold-color: #7fc9a0; /* green */
     --italic-color: #7fb0e0; /* blue */
-    --text-highlight-bg: #8c7840; /* yellow */
+    --text-highlight-bg: #5a4820; /* yellow */
 }
 
 /* Make windows look like Windows 3.1 windows - shared styling */
@@ -150,10 +136,31 @@ button svg,
 }
 
 /* Improve contrast for hover states - shared */
-button:hover, 
+/*button:hover,
 .clickable-icon:hover {
-	background-color: var(--interactive-hover);
+    background-color: var(--interactive-hover);
+    box-shadow: inset 1px 1px var(--window-shadow);
+}*/
+
+/* Hover States - Shared */
+button:hover {
+    background-color: var(--interactive-hover);
 }
+.cm-link:hover {
+    text-decoration: underline; /* For links */
+    color: var(--text-accent-hover); /* Optional: Add a hover color for links */
+}
+
+/* Light Theme Specific Hover */
+.theme-light button:hover {
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf;
+}
+
+/* Dark Theme Specific Hover */
+.theme-dark button:hover {
+    box-shadow: inset -1px -1px #3a3a3a, inset 1px 1px #888888;
+}
+
 
 /* Editor area styling - shared */
 .cm-s-obsidian {
@@ -164,10 +171,57 @@ button:hover,
 }
 
 /* Headings - shared */
-.cm-header {
+/*.cm-header {
 	font-weight: bold;
 	color: var(--titlebar-background);
+}*/
+
+/* Headings - Shared (Reading and Editing Modes) */
+.cm-header, /* Editing Mode */
+h1, h2, h3, h4, h5, h6 { /* Reading Mode */
+    font-weight: bold;
 }
+
+/* Reading Mode Specific (HTML Headings) */
+h1 {
+    color: var(--h1-color);
+}
+h2 {
+    color: var(--h2-color);
+}
+h3 {
+    color: var(--h3-color);
+}
+h4 {
+    color: var(--h4-color);
+}
+h5 {
+    color: var(--h5-color);
+}
+h6 {
+    color: var(--h6-color);
+}
+
+/* Editing Mode Specific (CodeMirror Headings) */
+.cm-header-1 {
+    color: var(--h1-color);
+}
+.cm-header-2 {
+    color: var(--h2-color);
+}
+.cm-header-3 {
+    color: var(--h3-color);
+}
+.cm-header-4 {
+    color: var(--h4-color);
+}
+.cm-header-5 {
+    color: var(--h5-color);
+}
+.cm-header-6 {
+    color: var(--h6-color);
+}
+
 
 /* Links - theme specific */
 .theme-light .cm-link, 
@@ -274,6 +328,10 @@ button:hover,
 }
 
 /* Theme-specific scrollbar styling */
+/* Light Scrollbars */
+
+
+
 .theme-light ::-webkit-scrollbar-thumb,
 .theme-light ::-webkit-scrollbar-button {
 	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
@@ -294,33 +352,36 @@ button:hover,
 
 /* Light Tabs styling */
 .theme-light .workspace-tab-header {
-	background-color: var(--background-tertiary);
-	color: var(--text-normal);
-	border: 1px solid #000;
-	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
-  }
-  
- .theme-light .workspace-tab-header.is-active {
-	background-color: var(--background-secondary);
-	box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #fff, inset 2px 2px grey, inset -2px -2px #dfdfdf;
-  } 
+    background-color: var(--background-tertiary);
+    color: var(--text-normal);
+    border: 1px solid #000;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+    border-radius: 5px; /* Ensure all corners align */
+}
 
+.theme-light .workspace-tab-header.is-active {
+    background-color: var(--background-secondary);
+    box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #fff, inset 2px 2px grey, inset -2px -2px #dfdfdf;
+    border-radius: 5px;
+}
 
- /* Dark Tabs styling */
-  .theme-dark .workspace-tab-header {
-	background-color: var(--background-tertiary);
-	color: var(--text-normal);
-	border: 1px solid #000;
-	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #666, inset -2px -2px #333, inset 2px 2px #555;
-  }
-  
-  .theme-dark .workspace-tab-header.is-active {
-	background-color: var(--background-secondary);
-	box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #666, inset 2px 2px #333, inset -2px -2px #555;
-  }
+/* Dark Tabs styling */
+.theme-dark .workspace-tab-header {
+    background-color: var(--background-tertiary);
+    color: var(--text-normal);
+    border: 1px solid #000;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #666, inset -2px -2px #333, inset 2px 2px #555;
+    border-radius: 5px;
+}
+
+.theme-dark .workspace-tab-header.is-active {
+    background-color: var(--background-secondary);
+    box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #666, inset 2px 2px #333, inset -2px -2px #555;
+    border-radius: 5px;
+}
 
 /* Code blocks - theme specific */
-.theme-light pre,
+/*.theme-light pre,
 .theme-light code {
 	background-color: #f0f0f0;
 	color: #0b6e4f;
@@ -348,7 +409,43 @@ button:hover,
 	color: #6fcf9f;
 	padding: 0 4px;
 	border-radius: 3px;
+}*/
+
+/* Code blocks - theme specific */
+.theme-light pre,
+.theme-light code {
+    background-color: #f0f0f0;
+    color: #0b6e4f;
+    border: 1px solid #c0c0c0;
+    font-family: "Courier New", monospace;
+    padding: 8px;
+    border-radius: 5px;
 }
+
+.theme-light .cm-inline-code {
+    background-color: #f0f0f0;
+    color: #0b6e4f;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.theme-dark pre,
+.theme-dark code {
+    background-color: #2a2a2a;
+    color: #6fcf9f;
+    border: 1px solid #555555;
+    font-family: "Courier New", monospace;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.theme-dark .cm-inline-code {
+    background-color: #2a2a2a;
+    color: #6fcf9f;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
 
 /* Properties mods - theme specific */
 .theme-light .metadata-container {
@@ -447,7 +544,6 @@ button:hover,
    font-weight: var(--font-bold);
 }
 
-
 /* TABLES */
 th {
 	border: 1px solid var(--background-tertiary) !important;
@@ -461,8 +557,12 @@ th {
 	border-bottom: 4px solid var(--background-tertiary);
   }
 
-  /* Calendar */
-
-  #calendar-container .today {
+/* Calendar Styling */
+#calendar-container .day:hover {
+    background-color: var(--interactive-hover);
+}
+#calendar-container .today {
     font-weight: 700;
+    background-color: var(--interactive-accent);
+    color: var(--titlebar-text);
 }
