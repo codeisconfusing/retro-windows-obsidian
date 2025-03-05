@@ -28,7 +28,7 @@ body {
 	--background-tertiary: #c0c0c0;         /* Classic Win 3.1 gray for UI elements */
 	
 	/* Title bar */
-	--titlebar-background: #000080;         /* Classic Win 3.1 blue */
+	--titlebar-background: #3c8000;         /* Classic Win 3.1 blue */
 	--titlebar-text: #ffffff;               /* White text on blue */
 	
 	/* Text colors */
@@ -37,7 +37,7 @@ body {
 	--text-faint: #666666;                  /* Medium gray for tertiary text */
 	
 	/* Interactive elements */
-	--text-accent: #000080;                 /* Win 3.1 blue for accents */
+	--text-accent: #008015;                 /* Win 3.1 blue for accents */
 	--interactive-normal: #d4d0c8;          /* Folder/button background */
 	--interactive-hover: #e6e6e6;           /* Hover state */
 	--interactive-accent: #000080;          /* Selected state - Win 3.1 blue */
@@ -260,6 +260,15 @@ h6 {
 }
 
 /* Modal dialogs - shared */
+.is-phone .modal .modal-title {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 70vw;
+}
+
 .modal {
 	background-color: var(--background-tertiary);
 	border: var(--window-border);
@@ -267,8 +276,9 @@ h6 {
 }
 
 .modal-title {
-	background-color: var(--titlebar-background);
 	color: var(--titlebar-text);
+	margin-left: auto;
+    margin-right: auto;
 	padding: 4px 8px;
 	font-weight: bold;
 }
@@ -378,6 +388,14 @@ h6 {
     background-color: var(--background-secondary);
     box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #666, inset 2px 2px #333, inset -2px -2px #555;
     border-radius: 5px;
+}
+
+/* fix bottom edge of active tabs https://github.com/codeisconfusing/retro-windows-obsidian/issues/1 
+& https://www.reddit.com/r/ObsidianMD/comments/1j2ulat/comment/mfzfqrt/
+thanks u/AccomplishedLife7782 / https://github.com/Gonzalo-D-Sales */
+.workspace-split.mod-root .workspace-tab-header::before,
+.workspace-split.mod-root .workspace-tab-header::after {
+display: none;
 }
 
 /* Code blocks - theme specific */
