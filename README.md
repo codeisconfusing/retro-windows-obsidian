@@ -38,6 +38,16 @@ A nostalgic Obsidian theme that brings back the classic look and feel of Windows
 ## Customization
 
 The theme includes variables at the top of the CSS file that can be adjusted to customize colors, fonts, and other elements.
+I may add support for Style Settings plugin in the future.
+
+## Optional Fonts & Plugins
+### Fonts
+- **Text font** Atkinson Hyperlegible: https://fonts.google.com/specimen/Atkinson+Hyperlegible
+- **Monospace font** JetBrains Mono: https://www.jetbrains.com/lp/mono/
+- Interface font is just Obsidian default.
+
+### Plugins
+**Iconize** for icons beside note folders: https://github.com/FlorianWoelki/obsidian-iconize
 
 ## Credits
 
