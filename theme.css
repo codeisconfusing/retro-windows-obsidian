@@ -436,14 +436,12 @@ display: none;
     color: #0b6e4f;
     border: 1px solid #c0c0c0;
     font-family: "Courier New", monospace;
-    padding: 8px;
     border-radius: 5px;
 }
 
 .theme-light .cm-inline-code {
     background-color: #f0f0f0;
     color: #0b6e4f;
-    padding: 2px 6px;
     border-radius: 3px;
 }
 
@@ -453,14 +451,12 @@ display: none;
     color: #6fcf9f;
     border: 1px solid #555555;
     font-family: "Courier New", monospace;
-    padding: 8px;
     border-radius: 5px;
 }
 
 .theme-dark .cm-inline-code {
     background-color: #2a2a2a;
     color: #6fcf9f;
-    padding: 2px 6px;
     border-radius: 3px;
 }
 
