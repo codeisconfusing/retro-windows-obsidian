@@ -28,7 +28,7 @@ body {
 	--background-tertiary: #c0c0c0;         /* Classic Win 3.1 gray for UI elements */
 	
 	/* Title bar */
-	--titlebar-background: #3c8000;         /* Classic Win 3.1 blue */
+	--titlebar-background: #000080;         /* Classic Win 3.1 blue */
 	--titlebar-text: #ffffff;               /* White text on blue */
 	
 	/* Text colors */
